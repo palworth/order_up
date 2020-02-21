@@ -13,7 +13,7 @@ RSpec.describe 'As a visitor when visiting chef show page', type: :feature do
     visit "/chefs/#{chef_1.id}"
     expect(page).to have_content(chef_1.name)
     click_link "All Ingredients"
-    expect(current_path).to eq('/chef/index')
+    expect(current_path).to eq("/chefs/#{chef_1.id}/index")
     expect(page).to have_content(ingredient_1.name)
     expect(page).to have_content(ingredient_2.name)
 
